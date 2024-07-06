@@ -6,7 +6,7 @@ import torch
 
 st.header("Object Detection using YOLOv5s")
 
-model = torch.hub.load("ultralytics/yolov5", "yolov5s", pretrained=True)
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='yolov5s.pt', source='github') 
 
 img = st.file_uploader("Upload an image.", type=['png','jpg'])
 
