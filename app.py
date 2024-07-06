@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
 import torch
 
-CFG_MODEL_PATH = "models/yourModel.pt"
+CFG_MODEL_PATH = "models/yolov5s.pt"
 CFG_ENABLE_URL_DOWNLOAD = True
 CFG_ENABLE_VIDEO_PREDICTION = True
 if CFG_ENABLE_URL_DOWNLOAD:
