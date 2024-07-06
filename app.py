@@ -11,7 +11,7 @@ st.header("Object Detection using YOLOv5s")
 
 @st.cache_resource
 def loadmodel():
-    model = torch.hub.load('ultralytics/yolov5', 'custom', path=CFG_MODEL_PATH, force_reload=True)
+    model = torch.hub.load('yolov5', 'custom', path=CFG_MODEL_PATH, force_reload=True)
     return model
 
 img = st.file_uploader("Upload an image.", type=['png','jpg'])
