@@ -2,4 +2,4 @@ streamlit
 torch
 numpy
 matplotlib
-cv2
+opencv
