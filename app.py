@@ -3,14 +3,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 import torch
+from ultralytics import YOLO
+
+model = YOLO('yolov5s.pt')
 
 st.header("Object Detection using YOLOv5s")
 
 img = st.file_uploader("Upload an image.", type=['png','jpg'])
 
 if img is not None:
-    model = torch.hub.load('ultralytics/yolov5', 'yolov5s')
-    
     PIL_image = Image.open(img).convert("RGB")
     image = np.asarray(PIL_image)
 
