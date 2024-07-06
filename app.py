@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 import torch
-import cv2
 
 st.header("Object Detection using YOLOv5s")
 
+torch.hub._validate_not_a_forked_repo=lambda a,b,c: True
 model = torch.hub.load('ultralytics/yolov5', 'yolov5s', source='github')
 
 img = st.file_uploader("Upload an image.", type=['png','jpg'])
