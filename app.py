@@ -4,14 +4,14 @@ import numpy as np
 from PIL import Image
 import torch
 
-CFG_MODEL_PATH = "models/yolov5s.pt"
+CFG_MODEL_PATH = "yolov5s.pt"
 # End of Configurations
 
 st.header("Object Detection using YOLOv5s")
 
 @st.cache_resource
 def loadmodel():
-    model = torch.hub.load('yolov5', 'custom', path=CFG_MODEL_PATH, force_reload=True)
+    model = torch.hub.load('models', CFG_MODEL_PATH, source='local')
     return model
 
 img = st.file_uploader("Upload an image.", type=['png','jpg'])
