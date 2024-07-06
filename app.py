@@ -4,20 +4,13 @@ import numpy as np
 from PIL import Image
 import torch
 
-CFG_MODEL_PATH = "yolov5s.pt"
-# End of Configurations
-
 st.header("Object Detection using YOLOv5s")
-
-@st.cache_resource
-def loadmodel():
-    model = torch.hub.load('models', CFG_MODEL_PATH, source='local')
-    return model
 
 img = st.file_uploader("Upload an image.", type=['png','jpg'])
 
 if img is not None:
-    model = loadmodel()
+    model = torch.hub.load('ultralytics/yolov5', 'yolov5s')
+    
     PIL_image = Image.open(img).convert("RGB")
     image = np.asarray(PIL_image)
 
